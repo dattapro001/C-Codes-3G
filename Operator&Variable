@@ -1,0 +1,33 @@
+#include<iostream>
+using namespace std;
+
+void OperatorCount() {
+    string str;
+    cout << "Enter the String: ";
+    cin.ignore();  // Ignore any newline character in the input buffer
+    getline(cin, str);  
+
+    int operatorCount = 0;
+    int variableCount = 0;
+
+    for (int i = 0; i < str.length(); i++) {
+        if (str[i] == ' ')
+            continue;
+
+        if (str[i] == '+' || str[i] == '-' || str[i] == '/' || str[i] == '*' || str[i] == '=') {
+            operatorCount++;
+        }
+        else if ((str[i] >= 'a' && str[i] <= 'z') || (str[i] >= 'A' && str[i] <= 'Z')) {
+            variableCount++;
+            i++;
+        }
+    }
+
+    cout << "Number of Operators: " << operatorCount << endl;
+    cout << "Number of Variables: " << variableCount << endl;
+}
+
+int main() {
+    OperatorCount();
+    return 0;
+}
