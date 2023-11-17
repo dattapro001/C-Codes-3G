@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int main(){
+void length(){
     string str;
     int space = 0;
 
@@ -13,7 +13,47 @@ int main(){
             space++;
          }
     }
+    
 
     cout << "Total String length(With space) : " << str.length() << endl;
-    cout << "Total String length(Without space) : " << str.length() - space << endl;
+    cout << "Total String length(Without space) : " << str.length() - space << endl;  
+}
+
+void reverse(){
+    string str;
+
+    cout << "Enter a string for reverse: ";
+    getline(cin,str);
+
+    for(int i = str.length() - 1;i >=0;i--){
+         cout << str[i];
+    }
+
+    cout << endl; 
+}
+
+void repeatation(){
+    string str;
+    char targetchar;
+    int charcount;
+
+    cout << "Enter a string: ";
+    getline(cin,str);
+
+    cout << "Enter the character you want to count: ";
+    cin >> targetchar;
+
+    for(int i = 0;i < str.length();i++){
+           if(str[i] == targetchar){
+            charcount++;
+           }
+    }
+     
+     cout << "Total occurences of '" << targetchar  << "'; " << charcount << endl;
+}
+
+int main(){
+    length();
+    reverse();
+    repeatation();
 }
